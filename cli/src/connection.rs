@@ -412,7 +412,7 @@ pub fn daemon_ready(session: &str) -> bool {
         let port = resolve_port(session);
         TcpStream::connect_timeout(
             &format!("127.0.0.1:{}", port).parse().unwrap(),
-            Duration::from_millis(50),
+            Duration::from_millis(250),
         )
         .is_ok()
     }
